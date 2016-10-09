@@ -1,0 +1,4 @@
+commons-collections-2.1.1.jar
+commons-logging-1.0.4.jar
+commons-pool-1.4.jar
+org.apache.commons.dbcp.jar

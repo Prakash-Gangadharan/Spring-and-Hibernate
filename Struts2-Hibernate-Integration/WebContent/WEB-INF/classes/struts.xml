@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <include file="struts-default.xml"/>
+    
+	<package name="first" namespace="/" extends="struts-default">
+	
+        <action name="hello" class="com.example.integration.Controller" method="execute">
+            <result name="success">/retrive.jsp</result>
+            <result name="error">/error.jsp</result>
+        </action>
+
+	</package>
+    
+    <package name="a" extends="struts-default">
+        
+        <action name="verify" class="com.example.integration.Java4sController" method="getRecords">
+            <result name="success">/retrive.jsp</result>
+            <result name="error">/error.jsp</result>
+        </action>
+        
+         <action name="update" class="com.example.integration.Java4sController" method="getRecordToUpdate">
+            <result name="success">/edit.jsp</result>
+            <result name="error">/error.jsp</result>
+        </action> 
+        
+          <action name="updateRecInDB" class="com.example.integration.Java4sController" method="updateRec">
+            <result name="success">/successOperation.jsp</result>
+            <result name="error">/error.jsp</result>
+        </action>
+        
+         <action name="insert" class="com.example.integration.Java4sController" method="insertRecord">
+            <result name="success">/successOperation.jsp</result>
+            <result name="error">/error.jsp</result>
+        </action> 
+        
+        <action name="delete" class="com.example.integration.Java4sController" method="deleteRecord">
+            <result name="success">/successOperation.jsp</result>
+            <result name="error">/error.jsp</result>
+        </action> 
+        
+         <action name="*Link" class="com.example.integration.Links" method="{1}">
+            <result name="insert">/insertScreen.jsp</result>
+            <result name="display">/retrive.jsp</result>           
+        </action>
+        
+    </package>
+</struts>
